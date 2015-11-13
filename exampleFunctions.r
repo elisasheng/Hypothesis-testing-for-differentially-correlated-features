@@ -197,7 +197,7 @@ MDset = function(data1,data2,alpha=0.05)
   
   # return the MD set
   mdset = (1:p)[test.stat[i,-(1:2)]==1]  
-  return(ifelse(length(mdset)==0,0,mdset))  
+  if(length(mdset)==0) return(0) else return(mdset)   
 }
 
 library(doParallel)
@@ -261,5 +261,5 @@ MDset2 = function(data1,data2,alpha=0.05)
 
   # return the MD set
   mdset = (1:p)[test.stat[i,-(1:2)]==1]  
-  return(ifelse(length(mdset)==0,0,mdset))  
+  if(length(mdset)==0) return(0) else return(mdset)  
 }
